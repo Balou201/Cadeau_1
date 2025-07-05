@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeux Anniversaire Laura 2025 !</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Définition des variables CSS pour faciliter les modifications des couleurs */
+        :root {
+            --sapin-green: #0A4F35; /* Le vert sapin principal */
+            --gold-accent: #FFD700; /* Une touche de doré pour la fête */
+            --white-text: #FFFFFF; /* Couleur du texte principal */
+            --light-green: #3CB371; /* Un vert plus clair pour le dégradé de fond */
+            --dark-overlay: rgba(0, 0, 0, 0.4); /* Superposition semi-transparente pour le conteneur */
+        }
+
+        /* Styles généraux du corps de la page */
+        body {
+            font-family: 'Open Sans', sans-serif; /* Police par défaut pour le corps */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* La page occupe au moins toute la hauteur de la fenêtre */
+            margin: 0;
+            /* Fond avec un dégradé du vert sapin au vert clair */
+            background: linear-gradient(to bottom right, var(--sapin-green), var(--light-green));
+            color: var(--white-text); /* Couleur du texte blanc */
+            text-align: center; /* Centre le texte */
+            padding: 20px;
+            box-sizing: border-box; /* Inclut le padding dans la largeur/hauteur totale */
+            overflow-x: hidden; /* Empêche le défilement horizontal indésirable */
+        }
+
+        /* Style du conteneur principal du contenu */
+        .container {
+            background-color: var(--dark-overlay); /* Fond semi-transparent */
+            padding: 50px;
+            border-radius: 20px; /* Bords arrondis */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Ombre prononcée */
+            max-width: 900px;
+            width: 100%;
+            transform: scale(1);
+            transition: transform 0.3s ease-in-out; /* Animation douce au survol */
+            border: 2px solid var(--gold-accent); /* Bordure dorée */
+        }
+
+        /* Effet au survol du conteneur */
+        .container:hover {
+            transform: scale(1.02); /* Léger agrandissement */
+        }
+
+        /* Style du titre principal (Joyeux Anniversaire) */
+        h1 {
+            font-family: 'Dancing Script', cursive; /* Police élégante et festive */
+            font-size: 4.5em; /* Grande taille de police */
+            margin-bottom: 25px;
+            color: var(--gold-accent); /* Couleur dorée */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre sur le texte */
+            letter-spacing: 2px; /* Espacement des lettres */
+            animation: fadeInScale 1.5s ease-out forwards; /* Animation d'apparition */
+        }
+
+        /* Style des paragraphes de texte */
+        p {
+            font-size: 1.3em; /* Taille de police plus grande */
+            line-height: 1.8; /* Espacement des lignes pour une meilleure lisibilité */
+            margin-bottom: 35px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto; /* Centre les paragraphes */
+        }
+
+        /* Style de l'image de la loutre */
+        .otter-image {
+            max-width: 80%; /* Occupe 80% de la largeur du conteneur */
+            height: auto;
+            border-radius: 15px; /* Bords arrondis */
+            margin-top: 30px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Ombre */
+            border: 3px solid var(--gold-accent); /* Bordure dorée autour de l'image */
+            transition: transform 0.3s ease-in-out; /* Animation douce au survol */
+        }
+
+        /* Effet au survol de l'image de la loutre */
+        .otter-image:hover {
+            transform: translateY(-5px) scale(1.03); /* Léger mouvement vers le haut et agrandissement */
+        }
+
+        /* Style du pied de page */
+        .footer {
+            margin-top: 50px;
+            font-size: 1em;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 1px;
+        }
+
+        /* Style spécifique pour la signature (message de Gianni) */
+        .signature {
+            font-family: 'Dancing Script', cursive; /* Utilise la même police élégante que le titre */
+            font-size: 1.8em; /* Taille de police notable */
+            margin-top: 40px;
+            color: var(--gold-accent); /* Couleur dorée */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Légère ombre sur le texte */
+        }
+
+        /* Animation pour le titre */
+        @keyframes fadeInScale {
+            from {
+                opacity: 0; /* Commence invisible */
+                transform: scale(0.8); /* Commence plus petit */
+            }
+            to {
+                opacity: 1; /* Devient visible */
+                transform: scale(1); /* Atteint sa taille normale */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Joyeux Anniversaire Laura !</h1>
+        <p>
+            En cette magnifique année 2025, nous te souhaitons un anniversaire absolument incroyable !
+            Que cette journée soit remplie de bonheur, de rires, de surprises et de tout ce qui te rend heureuse.
+            Que la joie t'accompagne à chaque instant !
+        </p>
+        <p>
+            Et parce que nous savons à quel point tu adores les loutres, voici une petite pensée pour toi :
+        </p>
+        <img src="https://i.pinimg.com/originals/93/a3/25/93a32526993b69bd2330300607580a61.jpg" alt="Une adorable loutre souriante" class="otter-image">
+        <p>
+            Profite bien de ta journée, Laura ! On te souhaite le meilleur pour cette nouvelle année.
+        </p>
+        <p class="signature">
+            J'espère que ce cadeau te plaira !<br>De la part de Gianni
+        </p>
+    </div>
+    <div class="footer">
+        <p>&#10084; Avec tout notre amour &#10084;</p>
+        <p>&copy; 2025</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,170 @@
+/* Définition des variables CSS pour faciliter les modifications des couleurs */
+:root {
+    --sapin-green: #0A4F35; /* Le vert sapin principal */
+    --gold-accent: #FFD700; /* Une touche de doré pour la fête */
+    --white-text: #FFFFFF; /* Couleur du texte principal */
+    --light-green: #3CB371; /* Un vert plus clair pour le dégradé de fond */
+    --dark-overlay: rgba(0, 0, 0, 0.5); /* Superposition légèrement plus foncée pour le conteneur */
+    --soft-shadow: rgba(0, 0, 0, 0.2); /* Ombre douce */
+    --strong-shadow: rgba(0, 0, 0, 0.6); /* Ombre plus prononcée */
+}
+
+/* Styles généraux du corps de la page */
+body {
+    font-family: 'Open Sans', sans-serif; /* Police par défaut pour le corps */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* La page occupe au moins toute la hauteur de la fenêtre */
+    margin: 0;
+    /* Fond avec un dégradé plus profond et animé */
+    background: linear-gradient(135deg, var(--sapin-green) 0%, var(--light-green) 100%);
+    background-size: 400% 400%; /* Permet l'animation du dégradé */
+    animation: gradientAnimation 15s ease infinite; /* Anime le dégradé */
+    color: var(--white-text); /* Couleur du texte blanc */
+    text-align: center; /* Centre le texte */
+    padding: 20px;
+    box-sizing: border-box; /* Inclut le padding dans la largeur/hauteur totale */
+    overflow-x: hidden; /* Empêche le défilement horizontal indésirable */
+    position: relative; /* Pour positionner les éléments décoratifs */
+}
+
+/* Style du conteneur principal du contenu */
+.container {
+    background-color: var(--dark-overlay); /* Fond semi-transparent */
+    padding: 50px;
+    border-radius: 20px; /* Bords arrondis */
+    box-shadow: 0 10px 20px var(--strong-shadow); /* Ombre plus prononcée */
+    max-width: 900px;
+    width: 100%;
+    transform: scale(0.95); /* Commence légèrement plus petit pour l'animation */
+    opacity: 0; /* Invisible au départ */
+    animation: fadeInSlideUp 1s ease-out forwards 0.5s; /* Animation d'apparition avec délai */
+    border: 3px solid var(--gold-accent); /* Bordure dorée plus épaisse */
+    position: relative;
+    z-index: 10; /* S'assure que le conteneur est au-dessus des confettis */
+}
+
+/* Effet au survol du conteneur */
+.container:hover {
+    transform: scale(1.01); /* Léger agrandissement */
+    box-shadow: 0 15px 30px var(--strong-shadow); /* Ombre encore plus prononcée au survol */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transition douce pour les deux propriétés */
+}
+
+/* Style du titre principal (Joyeux Anniversaire) */
+h1 {
+    font-family: 'Dancing Script', cursive; /* Police élégante et festive */
+    font-size: 5em; /* Encore plus grande */
+    margin-bottom: 30px;
+    color: var(--gold-accent); /* Couleur dorée */
+    text-shadow: 3px 3px 6px var(--strong-shadow); /* Ombre plus prononcée */
+    letter-spacing: 3px; /* Espacement des lettres */
+    animation: pulseGold 2s infinite alternate, fadeInScale 1.5s ease-out forwards; /* Animation de pulsation et d'apparition */
+    position: relative; /* Pour un effet 3D subtil */
+    transform-style: preserve-3d;
+}
+
+/* Style des paragraphes de texte */
+p {
+    font-size: 1.4em; /* Taille de police plus grande */
+    line-height: 1.8; /* Espacement des lignes pour une meilleure lisibilité */
+    margin-bottom: 40px;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto; /* Centre les paragraphes */
+    text-shadow: 1px 1px 2px var(--soft-shadow); /* Légère ombre sur le texte */
+}
+
+/* Style de l'image de la loutre */
+.otter-image {
+    max-width: 85%; /* Occupe 85% de la largeur du conteneur */
+    height: auto;
+    border-radius: 20px; /* Bords plus arrondis */
+    margin-top: 40px;
+    box-shadow: 0 8px 16px var(--strong-shadow); /* Ombre */
+    border: 4px solid var(--gold-accent); /* Bordure dorée plus épaisse */
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Animation plus "rebondissante" */
+}
+
+/* Effet au survol de l'image de la loutre */
+.otter-image:hover {
+    transform: translateY(-10px) scale(1.05) rotate(2deg); /* Mouvement plus prononcé, agrandissement et légère rotation */
+    box-shadow: 0 12px 24px var(--strong-shadow); /* Ombre plus grande au survol */
+}
+
+/* Style du pied de page */
+.footer {
+    margin-top: 60px;
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 2px var(--soft-shadow);
+}
+
+/* Style spécifique pour la signature (message de Gianni) */
+.signature {
+    font-family: 'Dancing Script', cursive; /* Utilise la même police élégante que le titre */
+    font-size: 2.2em; /* Taille de police plus notable */
+    margin-top: 50px;
+    color: var(--gold-accent); /* Couleur dorée */
+    text-shadow: 2px 2px 4px var(--strong-shadow); /* Ombre plus prononcée sur le texte */
+    transform: rotateX(0deg); /* Commence plat */
+    animation: signatureFlip 3s ease-out forwards 1s; /* Animation d'apparition avec un effet de rotation */
+}
+
+/* Animations Keyframes */
+
+/* Animation du dégradé de fond */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Animation d'apparition pour le conteneur */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Animation pour le titre (Joyeux Anniversaire) */
+@keyframes fadeInScale {
+    from {
+        opacity: 0; /* Commence invisible */
+        transform: scale(0.7); /* Commence plus petit */
+    }
+    to {
+        opacity: 1; /* Devient visible */
+        transform: scale(1); /* Atteint sa taille normale */
+    }
+}
+
+/* Animation de pulsation dorée pour le titre */
+@keyframes pulseGold {
+    0% { text-shadow: 3px 3px 6px var(--strong-shadow), 0 0 5px var(--gold-accent); }
+    100% { text-shadow: 3px 3px 10px var(--strong-shadow), 0 0 20px var(--gold-accent); }
+}
+
+/* Animation de rotation pour la signature */
+@keyframes signatureFlip {
+    0% {
+        opacity: 0;
+        transform: rotateX(90deg);
+    }
+    70% {
+        opacity: 1;
+        transform: rotateX(-10deg); /* Petite overshoot pour un effet plus doux */
+    }
+    100% {
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}
